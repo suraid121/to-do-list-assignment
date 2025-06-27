@@ -1,13 +1,46 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="style.css" rel="stylesheet">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+
+<body class="bg-gray-100 p-4 flex justify-center items-center min-h-screen bg-[url('picture.png')] bg-cover bg-center bg-no-repeat font-serif italic">
+  <!-- This is header section-->
+  <header class="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl  xl:max-w-3xl bg-white p-6 rounded-lg shadow-lg">
+
+    <h1 class="text-2xl font-bold text-center mb-2">To-do List</h1>
+    <p class="text-center text-gray-600" id="taskSummary">0 Total, 0 Completed, 0 Pending</p>
+    <!-- This is form Section-->
+    <form class="flex flex-col sm:flex-row mt-4 gap-2">
+      <input id="taskInput" type="text" placeholder="Type your task..." class="border p-2 w-full sm:flex-grow rounded-md focus:outline-none">
+      <button id="addTask" class="bg-blue-500 text-white px-4 py-2 rounded-md">
+        Add
+      </button>
+    </form>
+    <!-- This is error showing section-->
+    <p id="errorMessage1" class="text-red-500 text-sm mt-2 hidden">Please enter a valid task!</p>
+    <p id="errorMessage2" class="text-red-500 text-sm mt-2 hidden">Task already exists!</p>
+    <!-- This is output section-->
+
+    <div class="w-full mt-4 border-t overflow-x-auto">
+      <div class="flex p-2 font-bold border-b text-sm md:text-base">
+        <div class="w-1/6 text-center">Num</div>
+        <div class="w-1/2 break-words">Task</div>
+        <div class="w-1/6 text-center">Status</div>
+        <div class="w-1/6 text-center">Actions</div>
+      </div>
+      <!-- This is task list section-->
+      <div id="taskList" class="overflow-x-auto"></div>
+    </div>
+
+  </header>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
