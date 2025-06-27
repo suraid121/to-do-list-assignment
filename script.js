@@ -72,7 +72,7 @@ document.getElementById("taskList").addEventListener("click", function (event) {
     updateSummary();
   }
 
-  if (target.classList.contains("edit-tas")) {
+  if (target.classList.contains("edit-task")) {
     let taskText = target.closest(".flex").querySelector(".task-text");
     let newTask = prompt("Edit your task:", taskText.textContent);
     if (newTask) taskText.textContent = newTask.trim();
@@ -80,7 +80,7 @@ document.getElementById("taskList").addEventListener("click", function (event) {
 });
 
 document
-  .getElementById("taskLis")
+  .getElementById("taskList")
   .addEventListener("change", function (event) {
     if (event.target.classList.contains("task-status")) updateSummary();
   });
